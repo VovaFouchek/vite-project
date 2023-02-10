@@ -1,27 +1,30 @@
-import reactLogo from './assets/react.svg';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from 'react-router-dom';
+
+import RootLayout from './layouts';
+
+// Pages
+import Home from './pages/Home';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
+import Register from './pages/Register';
 
 const App = () => {
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />} errorElement={<NotFound />}>
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Route>
+    )
   );
+
+  return <RouterProvider router={router} />;
 };
 
 export default App;

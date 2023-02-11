@@ -5,21 +5,28 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import RootLayout from './layouts';
+// Constance
+import ROUTERS from './constants/routers';
 
 // Pages
-import Home from './pages/Home';
-import Login from './pages/Login';
+import Register from './pages/Auth/SignUp';
+import Login from './pages/Auth/Login';
 import NotFound from './pages/NotFound';
-import Register from './pages/Register';
+import Home from './pages/Home';
+
+import RootLayout from './layouts';
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />} errorElement={<NotFound />}>
+      <Route
+        path={ROUTERS.HOME}
+        element={<RootLayout />}
+        errorElement={<NotFound />}
+      >
         <Route index element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
+        <Route path={ROUTERS.SIGN_IN} element={<Login />} />
+        <Route path={ROUTERS.SIGN_UP} element={<Register />} />
       </Route>
     )
   );

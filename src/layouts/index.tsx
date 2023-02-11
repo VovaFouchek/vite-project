@@ -1,14 +1,16 @@
 import { NavLink, Outlet } from 'react-router-dom';
+// Constance
+import ROUTERS from '../constants/routers';
 
 const RootLayout = () => {
   return (
     <>
       <header>
         <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="about">About</NavLink>
-          <NavLink to="register">Register</NavLink>
-          <NavLink to="login">Login</NavLink>
+          <NavLink to={ROUTERS.HOME}>Home</NavLink>
+          <NavLink to={ROUTERS.ABOUT}>About</NavLink>
+          <NavLink to={ROUTERS.SIGN_UP}>Register</NavLink>
+          <NavLink to={ROUTERS.SIGN_IN}>Login</NavLink>
         </nav>
       </header>
       <main>

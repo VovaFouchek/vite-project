@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -14,7 +15,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["vite.config.ts", ".eslintrc.cjs", "src"],
   "references": [{ "path": "./tsconfig.node.json" }]

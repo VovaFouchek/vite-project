@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { IUserReducer } from './interfaces';
 
 const initialValue: IUserReducer = {

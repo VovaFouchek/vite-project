@@ -7,14 +7,12 @@ import {
 
 // Constance
 import ROUTERS from './constants/routers';
-
 // Pages
-import Register from './pages/Auth/SignUp';
-import Login from './pages/Auth/Login';
-import NotFound from './pages/NotFound';
-import Home from './pages/Home';
-
 import RootLayout from './layouts';
+import Login from './pages/Auth/Login';
+import Register from './pages/Auth/SignUp';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   const router = createBrowserRouter(

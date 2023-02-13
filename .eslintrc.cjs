@@ -33,5 +33,7 @@ module.exports = {
         peerDependencies: true,
       },
     ],
+    'import/no-unresolved': 'off',
+    'no-param-reassign': 0,
   },
 };
